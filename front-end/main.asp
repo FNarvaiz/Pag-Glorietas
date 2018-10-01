@@ -20,9 +20,11 @@ dim serverApp: serverApp = "front-end/main.asp"
 function renderMainMenu
   if getUsrData then
     %>
-    <center>
-    <table cellpadding="0" cellspacing="0" height="100%">
-    <tr>
+    <div id="espacio"></div>
+    <div onclick="menu()" class="menu_bar">
+      <span>Vecinos de Glorietas</span>
+    </div>
+    <ul id="navegador">
       <%
       dim labels
       labels = eval("mainMenuLabels" & lang)
@@ -30,29 +32,29 @@ function renderMainMenu
       for i = 0 to uBound(labels)
 '        if mainMenuContents(i) <> "classifieds" or usrName = "gbd" then
           %>
-          <td id="mainMenuOption<%= i %>" class="btn anchor" onclick="load(this, '<%= mainMenuContents(i) %>')"><%= labels(i) %></td>
-          <td class="interBtn">&nbsp;</td>
+          <li id="mainMenuOption<%= i %>" class="li" onclick="load(this, '<%= mainMenuContents(i) %>')"><%= labels(i) %></li>
+          
           <%
       next
       %>
-    </tr>
-    </table>
-    </center>
+    </ul>
     <%
   else
     %>
-    <table cellpadding="0" cellspacing="0" height="44">
-    <tr>
-      <td class="btn anchor" onclick="showLoginDialog()" id="loginMenuItem"><%= eval("loginMenuItem" & lang) %></td>
-      <td class="interBtn">&nbsp;</td>
-      <td class="btn anchor" onclick="load(this, 'registrationDialog')"><%= eval("registrationMenuItem" & lang) %></td>
-      <td class="interBtn">&nbsp;</td>
-      <td class="btn anchor" onclick="load(this, 'faq')"><%= eval("faqMenuItem" & lang) %></td>
-    </tr>
-    </table>
+    <div id="espacio"></div>
+    <div onclick="menu()" class="menu_bar">
+      <span>Vecinos de Glorietas</span>
+    </div>
+    <ul id="navegadorLogin">
+      <li class="btn anchor" onclick="showLoginDialog()" id="loginMenuItem"><%= eval("loginMenuItem" & lang) %></li>
+      <li class="btn anchor" onclick="load(this, 'registrationDialog')"><%= eval("registrationMenuItem" & lang) %></li>
+      <li class="btn anchor" onclick="load(this, 'faq')"><%= eval("faqMenuItem" & lang) %></li>
+    </ul>
     <%
   end if
 end function
+
+
 
 function renderUserMenu
   if not getUsrData then exit function
@@ -78,7 +80,7 @@ function renderHome
     <table cellpadding="0" cellspacing="3" width="100%" id="homeNews">
       <tr><th colspan="2" align="left" valign="middle">NOVEDADES</th></tr>
       <%
-      if dbGetData("SELECT TOP 10 ID, NOMBRE, dbo.DATE_TO_STR(REC_FECHA, " & sQuotes(lang) & ") AS FECHA, CONTENIDO_TEXTO, ARCHIVO_FILENAME, ARCHIVO_FILESIZE " & _
+      if dbGetData("SELECT ID, NOMBRE, dbo.DATE_TO_STR(REC_FECHA, " & sQuotes(lang) & ") AS FECHA, CONTENIDO_TEXTO, ARCHIVO_FILENAME, ARCHIVO_FILESIZE " & _
           "FROM LINEA_TIEMPO WHERE APROBADO=1 AND ID_CATEGORIA=" & newsCategoryId & " AND CONTENIDO_TEXTO IS NOT NULL" & _
           " ORDER BY ANIO DESC, MES DESC, REC_FECHA DESC, ID DESC") then
         do while not rs.EOF
@@ -101,7 +103,56 @@ function renderHome
       %>
     </table>
   </div>
-  <iframe id="schedule" src="contenidos/tableroInicio.html"></iframe>
+  <div id="schedule" >
+    <section class="days">
+      <h2>Entrenamiento Funcional</h2>
+      <article class="activityFirst">
+        <h3 class="hour">Lunes, Miercoles y Viernes</h3>
+        <p >
+          8:30 a 9:30 hs
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">Martes y Jueves</h3>
+        <p >
+           20:00 a 21:00 hs
+        </p>
+      </article>
+    </section>
+    <section class="days">
+      <h2>Esc de Gim deportiva, Hockey y Fútbol</h2>
+      <article class="activityFirst">
+        <h3 class="hour">Martes y Jueves</h3>
+        <p >
+          17:30 a 19:00 hs
+        </p>
+      </article>
+       <article class="activitySecond">
+        <h3 class="hour">Sabado</h3>
+        <p >
+          9:30 a 13:00 hs
+        </p>
+      </article>
+    </section>
+    <section class="days">
+      <h2>Fútbol Femenino (Suspende por lluvia)</h2>
+      <article class="activityFirst">
+        <h3 class="hour">Viernes</h3>
+        <p >
+          9:30 a 11:00 hs
+        </p>
+      </article>
+    </section>
+    <section class="days">
+      <h2>Tenis infantil grupal</h2>
+      <article class="activityFirst">
+        <h3 class="hour">Sabado</h3>
+        <p >
+          10:00 a 11:00 hs
+        </p>
+      </article>
+    </section>
+ </div>
   <%
   
   'if dbGetData("SELECT HTML FROM CONTENIDOS WHERE ID=10") then
@@ -115,7 +166,44 @@ function renderFAQ
   dim url: url = "contenidos/faq/faq.html"
   %>
   <div id="dynPanelBg"></div>
-  <iframe id="contentsPanel" src="<%= url %>"></iframe>
+  <div id="contentsPanel">
+    <div id="wrapper">
+      <div id="qs">
+        <h1><img src="contenidos/faq/signo.png" /> PREGUNTAS FRECUENTES</h1>
+        <table width="800" cellpadding="10" cellspacing="5" >
+          <tr>
+            <td width="50%" class="preg" valign="top">
+              <h2>Olvidé mi contraseña. ¿Cómo la recupero?</h2>
+              <p>Es común no recordar este tipo de cosas.<br>Para recuperarla, en la pantalla de ingreso al sistema 
+              hacé clic en “Olvidé mi contraseña”. Allí escribí el e-mail con el que te registraste, y el sistema te enviará la contraseña.</p>
+            </td>
+            <td class="preg" width="50%" valign="top">
+              <h2>Si poseo más de un lote, ¿puedo visualizar los datos de todos ellos a la vez?</h2>
+              <p>No. Cada usuario representa a un lote. Por ello, al poseer más de uno deberás ingresar de manera individual
+              para visualizar la información de cada uno.</p>
+            </td>
+          </tr>
+          
+          <tr>
+            <td colspan="1" class="preg" width="50%" valign="top">
+              <h2>No puedo ingresar al sistema. ¿Qué hago?</h2>
+              <p>Antes que nada asegúrate de ingresar correctamente tu e-mail y tu contraseña.
+              Si continúas experimentando problemas, por favor, ponete en contacto con nosotros.</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="preg" width="50%" valign="top">
+              <h2>¿Cómo cambio mi contraseña?</h2>
+              <p>Una vez que hayas ingresado al sistema, al pie de la pantalla hacé clic en “Cambiar contraseña”.
+              Luego ingresá tu contraseña actual y la nueva que hayas elegido.
+              Recordá que es aconsejable cambiar periódicamente la contraseña.</p>
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
+  </div>
   <div id="contactPanel">
     Envianos tu consulta a <a href="mailto:info@vecinosdeglorietas.com.ar">info@vecinosdeglorietas.com.ar</a><br>
     o mediante el siguiente formulario.
@@ -169,6 +257,47 @@ function renderAbout
   %>
   <div id="dynPanelBg"></div>
   <iframe id="aboutContentPanel" scrolling="no" src="<%= url %>"></iframe>
+  <div id="aboutResponsive">
+    <section id="tabla">
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/2.png"/>
+        <title>Coordinador de comisiones</title>
+        <p>Osvaldo G. Campoo (Director) / Sebastian Kouyoumdjian (Director Suplente) </p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/1.png"/>
+        <title>Comisión Seguridad</title>
+        <p>Cesar Capella / Sebastián Kouyoumdjian / Guillermo Danna / Alexis Polic / Alejandro Angelico</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/3.png"/>
+        <title>Comisión de espacios verdes y lagos</title>
+        <p>Pedro Parente / Sebastian Kouyoumdjian</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/6.png"/>
+        <title>Comisión de fútbol</title>
+    <p>Andrea Luro / Damian Di Tullio / Fernando Peisci / Guillermo Moray</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/3.png"/>
+        <title>Director vecinal</title>
+        <p>Osvaldo G. Campoo</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/7.png"/>
+        <title>Intendente</title>
+        <p>Claudio Feider Flores</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/4.png"/>
+        <title>Auxiliares</title>
+        <p>Carlos Seltzer / Armando Gil / Gustavo Gonzalez</p>
+      </article>
+    </section>  
+  
+  
+</div>
   <div id="aboutContactPanel">
     <span style="font-size: 14px">Mensajes a la Administración</span><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;Por favor, completá el siguiente formulario<br>
@@ -270,7 +399,7 @@ function sendMail(toName, toEmail, subject, message, replyToName, replyToEmail)
     .Item ("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "localhost"
     .Item ("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
     .Item ("http://schemas.microsoft.com/cdo/configuration/sendusername") = "info@vecinosdeglorietas.com.ar"
-    .Item ("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "qRa01r%4"
+    .Item ("http://schemas.microsoft.com/cdo/configuration/sendpassword") = PassMails
     .update
   end with
   with cdoMail

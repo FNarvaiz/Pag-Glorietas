@@ -6,3 +6,11 @@ D:\Documents\Visual Studio 2012\Projects\Glorietas\Del Golf\obj\Debug\Glorietas.
 D:\Documents\Visual Studio 2012\Projects\Glorietas\Del Golf\obj\Debug\Del Golf.dll
 D:\Documents\Visual Studio 2012\Projects\Glorietas\Del Golf\obj\Debug\Del Golf.xml
 D:\Documents\Visual Studio 2012\Projects\Glorietas\Del Golf\obj\Debug\Del Golf.pdb
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\bin\Del Golf.dll
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\bin\Del Golf.pdb
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\bin\Del Golf.xml
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\obj\Debug\Del_Golf.Resources.resources
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\obj\Debug\Glorietas.vbproj.GenerateResource.Cache
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\obj\Debug\Del Golf.dll
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\obj\Debug\Del Golf.xml
+C:\Users\UnAlegreTigre\Desktop\Projects\Glorietas\Del Golf\obj\Debug\Del Golf.pdb

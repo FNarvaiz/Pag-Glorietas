@@ -333,7 +333,7 @@ function sendCDOMail(sName, sEmail, sSubject, sMessage, senderName, senderEmail)
 		.Item ("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "localhost"
     .Item ("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
     .Item ("http://schemas.microsoft.com/cdo/configuration/sendusername") = "info@vecinosdeglorietas.com.ar"
-    .Item ("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "qRa01r%4"
+    .Item ("http://schemas.microsoft.com/cdo/configuration/sendpassword") = PassMails
 		.update
 	end with
 	with cdoMail
@@ -379,7 +379,7 @@ function sendCDOGroupMail(emailAddresses, occultEmailAddresses, mailSubject, mes
 		.item("http://schemas.microsoft.com/cdo/configuration/smtpserver")  = "localhost"
 		.Item ("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
     .Item ("http://schemas.microsoft.com/cdo/configuration/sendusername") = "info@vecinosdeglorietas.com.ar"
-    .Item ("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "qRa01r%4"
+    .Item ("http://schemas.microsoft.com/cdo/configuration/sendpassword") = PassMails
 		.update
 	end with
 	with cdoMail
