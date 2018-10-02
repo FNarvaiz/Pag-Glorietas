@@ -63,31 +63,19 @@ function renderSuppliersListing(categoryId)
         "dbo.NOMBRE_VALORACION(dbo.VALORACION_PROVEEDOR_VECINO(ID, " & usrId & ")) AS VALORACION_VECINO " & _
         "FROM PROVEEDORES WHERE VIGENTE=1 " & searchExpr & _
         "ORDER BY CATEGORIA, NOMBRE") then
-      dim i: i = 0
+    
       dim j: j = 1
       do while not rs.EOF
-        if i = 0 then
+        
           %>
-          <tr>
-          <%
-        end if
-        %>
-        <td width="48%" valign="top" class="supplierItem">
-          <div id="suppliersItem<%= j %>"><% renderSuppliersItem(j) %></div>
-        </td>
+        <tr margin-botton="10" >
+          <td width="100%" valign="top" class="supplierItem">
+            <div id="suppliersItem<%= j %>" style=" border-bottom:solid;"><% renderSuppliersItem(j) %></div>
+          </td>
+        </tr>
         <%
-        if i = 0 then
-          %>
-          <td width="20">&nbsp;</td>
-          <%
-          i = 1
-        else
-          %>
-          </tr>
-          <tr><td>&nbsp;</td></tr>
-          <%
-          i = 0
-        end if
+        
+          
         j = j + 1
         rs.moveNext
       loop

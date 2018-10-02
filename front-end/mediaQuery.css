@@ -394,6 +394,29 @@ section.headerTable {
     #contactPanel label {
         display: none;
     }
+    /*-------------------------------CLASIFICADOS---------------------------*/
+    #classifiedsTitle{
+        position: initial;
+        padding: 10px;
+    }
+    #classifiedsLeftCol{
+        width: 100%;
+
+    }
+    .voteResultfg{
+            display: inline-flex;
+    }
+    #classifiedsCategories{
+        position: initial;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.8);
+    }
+    #classifiedsPanel{
+        position: initial;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
     /*------------------------------------ PROPUESTAS--------------------------*/
     #surveysTitle{
         position: initial;
