@@ -66,12 +66,9 @@ function renderBookings
       </tr>
       <tr>
         <td align="left" colspan="4" id="bookingsformNote">
-        QUINCHO: Lun a Dom de 12:00 a 15:00 hs y de 17:00 a 20:00 hs. (valor bono c/turno $ 1.500.-) 
-<br>Lun A Jue y Dom de 21:00 a 24:00 hs (valor bono turno $ 1.500.-) 
-<br>Vie, Sab y Visp. Feriado de 21:00 a 03:00 hs. (valor bono turno $ 2.000.-) 
-<br>HOUSE: Lun a Vie de 12:00 a 15:00 hs y de 17:00 a 20:00 hs (valor bono c/turno $ 1.800.-) 
-<br>Lun a JUE y Dom de 21:00 a 24:00 hs (valor bono turno $ 2.350.-) 
-<br>Vie, Sab y Visp. Feriado de 21:00 a 03:00 hs (valor bono turno $ 3.300.-)   
+        <a target="_blank" href="contenidos/CondHouse.pdf" >Descargar Condiciones del House</a>  <br>
+        <a target="_blank" href="contenidos/CondQuincho.pdf">Descargar Condiciones del Quincho</a>  <br>
+        <a target="_blank" href="contenidos/CondQuinchoComunitario.pdf" >Descargar Condiciones del Quincho Comunitario</a>  
         </td>
       </tr> 
     </table>
@@ -371,7 +368,7 @@ end function
 function bookingCancel(bookingId)
   if not getUsrData then exit function
   dbGetData("SELECT ID_RECURSO, FECHA, dbo.NOMBRE_RECURSO_RESERVA(ID_RECURSO) AS RECURSO, dbo.HOUR_TO_STR(INICIO) AS TURNO, " & _
-    "CAST(CASE WHEN DATEDIFF(MINUTE, GETDATE(), dbo.FECHA_INICIO_TURNO(FECHA, INICIO)) >= 120 THEN 1 ELSE 0 END AS BIT) AS OK " & _
+    "CAST(CASE WHEN DATEDIFF(MINUTE, GETDATE(), dbo.FECHA_INICIO_TURNO(FECHA, INICIO)) >= 30 THEN 1 ELSE 0 END AS BIT) AS OK " & _
     "FROM RESERVAS WHERE ID=" & bookingId)
   dim OK: OK = rs("OK")
   dim resourceId: resourceId = rs("ID_RECURSO")
@@ -390,7 +387,7 @@ function bookingCancel(bookingId)
       logActivity "Cancela reserva " & resource, bookingDate & "&nbsp;" & turn
     else
       JSONAddOpFailed
-      JSONAddMessage resource & ": el turno " & bookingDate & " " & turn & "\n\nYa no es posible cancelar la reserva porque la anticipación mínima es de 2 horas."
+      JSONAddMessage resource & ": el turno " & bookingDate & " " & turn & "\n\nYa no es posible cancelar la reserva porque la anticipación mínima es de 30 minutos."
       logActivity "Cancela reserva " & resource, bookingDate & " " & turn & ", denegada: anticipación insuficiente."
     end if
   end if
