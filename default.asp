@@ -57,6 +57,7 @@ end function
 <head>
 <title>Las glorietas - Sistema Brick</title>
 <meta http-equiv="Content-Type" content="text/html;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="apple-touch-icon" sizes="57x57" href="contenidos/iconos/apple-icon-57x57.png">
