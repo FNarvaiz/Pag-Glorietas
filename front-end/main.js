@@ -130,7 +130,7 @@ function start()
     function() {
       ajaxGetText(appServer + "?lang=" + lang + "&sessionId=" + sessionId + "&content=userMenu", "userMenu", "",
         function() {
-          document.getElementById("mainMenuOption0").click();
+          document.getElementById("mainMenuOption4").click();
         }
       );
     }
