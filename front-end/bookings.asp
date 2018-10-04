@@ -560,7 +560,7 @@ function bookingsSendRequest(bookingDate, placeId, turnId)
         dbGetData("SELECT dbo.NOMBRE_TURNO(" & turnStart & ", " & turnDuration & ")")
         dim turnName: turnName = rs(0)
         dbReleaseData
-        dim message: message = "<h2>Solicitud de reserva</h2><h3>Su solicitud de reserva fue enviada con exito. El equipo de Glorietas se comunicará para informale de su reserva. Puede ver las condiciones por cualquier inconveniente: <a href=" & dQuotes("http://vecinosdeglorietas.com.ar/contenidos/Cond"& resourceName & ".pdf") & ">Condiciones</a> </h3>"&_
+        dim message: message = "<h2>Solicitud de reserva</h2><h3>Su solicitud de reserva fue enviada con exito. El equipo de Glorietas se comunicará para informale de su reserva. Puede ver las condiciones por cualquier inconveniente: <a href=" & dQuotes("https://vecinosdeglorietas.com.ar/contenidos/Cond"& resourceName & ".pdf") & ">Condiciones</a> </h3>"&_
           "<table border=1 cellpadding=5>" & _
           "<tr><td>Unidad/Lote:</td><td>" & usrUnit & "</td></tr>" & _
           "<tr><td>Familia:</td><td>" & usrName & "</td></tr>" & _
