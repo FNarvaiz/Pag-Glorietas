@@ -16,6 +16,14 @@
 #homePanel {
     overflow: auto;
 }
+#bookingsformControls{
+    padding: 0px 10px;
+}
+#DescriptionBooking{
+    padding-left: 14px;
+    height: 140px;
+    overflow-y: auto;
+}
 #bookingsStatusPanel{overflow: auto;}
 .buttonCancha{
         width: 100%;
@@ -247,11 +255,14 @@ section.headerTable {
 }
 @media (max-width: 1160px) {
     #PanelsBookingConten{width: 100%; float: none;text-align: center; display: flex; margin-bottom: 10px;}
-    #bookingsFormPanel{width: 40%}
     #bookingsPanel{width: 60%;border-right: dotted 1px #666666;margin: 0px;}
     #bookingsStatusPanel{width: 100%;}
 }
 @media (max-width: 950px) {
+    #DescriptionBooking{
+        height: auto;
+        padding: 10px;
+    }
     /*---------------------------------------------  HOME -------------------------------------- */
     .noView{
         display: inline-block;

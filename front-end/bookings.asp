@@ -64,14 +64,31 @@ function renderBookings
           </select>
         </td>
       </tr>
-      <tr>
-        <td align="left" colspan="4" id="bookingsformNote">
-        <a target="_blank" href="contenidos/CondHouse.pdf" >Descargar Condiciones del House</a>  <br>
-        <a target="_blank" href="contenidos/CondQuincho.pdf">Descargar Condiciones del Quincho</a>  <br>
-        <a target="_blank" href="contenidos/CondQuinchoComunitario.pdf" >Descargar Condiciones del Quincho Comunitario</a>  
-        </td>
-      </tr> 
-    </table>
+      </table>
+      <div id="DescriptionBooking">
+       <strong>-HOUSE</strong><br>
+
+Lunes a Jueves de 11:00 hs a 16:00 hs, valor $ 1.800.-<br>
+Lunes a Jueves de 17:00 hs a 20:00 hs, valor $ 1.800.-<br>
+Lunes a Jueves y Domingos de 21:00 hs a 24:00 hs, valor $ 2.350.-<br>
+Viernes de 11:00 hs a 17:00 hs, valor $ 1.800.-<br>
+Viernes, Sábados y Visp. de Feriados de 19:00 hs a 03:00 hs, valor $ 3.300.-<br>
+
+
+ <strong>-QUINCHO</strong><br>
+Lunes a Jueves de 11:00 hs a 16:00 hs, valor $ 1.500.-<br>
+Lunes a Jueves de 17:00 hs a 20:00 hs, valor $ 1.500.-<br>
+Lunes a Jueves y Domingos de 21:00 hs a 24:00 hs, valor $ 1.500.-<br>
+Viernes, Sábados y Domingos de 11:00 hs a 17:00 hs, valor $ 1.500.-<br>
+Viernes, Sábados y Visp. de Feriados de 19:00 hs a 03:00 hs, valor $ 2.000.-<br>
+
+ <strong>-QUINCHO COMUNITARIO-FAMILIAR</strong><br>
+Lunes a Jueves de 11:00 hs a 16:00 hs, valor $ 500.-<br>
+Lunes a Jueves de 21:00 hs a 24:00 hs, valor $ 500.-<br>
+Viernes, Sábados y Domingos de 11:00 hs a 17:00 hs, valor $ 500.-<br>
+Viernes, Sábados y Domingos de 19:00 hs a 24:00 hs, valor $ 500.-
+      </div>
+    
   </div>
   <div id="bookingsStatusPanel">
     <div id="bookingsStatusTitle">ESTADO DE LAS RESERVAS
@@ -543,7 +560,7 @@ function bookingsSendRequest(bookingDate, placeId, turnId)
         dbGetData("SELECT dbo.NOMBRE_TURNO(" & turnStart & ", " & turnDuration & ")")
         dim turnName: turnName = rs(0)
         dbReleaseData
-        dim message: message = "<h2>Solicitud de reserva</h2><h3>Su solicitud de reserva fue enviada con exito. El equipo de Glorietas se comunicará para informale de su reserva. Puede ver las condiciones por cualquier inconveniente: <a href=" & dQuotes("http://vecinosdeglorietas.com.ar/contenidos/condiciones"& resourceName & ".pdf") & ">Condiciones</a> </h3>"&_
+        dim message: message = "<h2>Solicitud de reserva</h2><h3>Su solicitud de reserva fue enviada con exito. El equipo de Glorietas se comunicará para informale de su reserva. Puede ver las condiciones por cualquier inconveniente: <a href=" & dQuotes("http://vecinosdeglorietas.com.ar/contenidos/Cond"& resourceName & ".pdf") & ">Condiciones</a> </h3>"&_
           "<table border=1 cellpadding=5>" & _
           "<tr><td>Unidad/Lote:</td><td>" & usrUnit & "</td></tr>" & _
           "<tr><td>Familia:</td><td>" & usrName & "</td></tr>" & _

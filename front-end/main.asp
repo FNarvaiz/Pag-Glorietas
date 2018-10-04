@@ -105,50 +105,44 @@ function renderHome
   </div>
   <div id="schedule" >
     <section class="days">
-      <h2>Entrenamiento Funcional</h2>
+      <h2>MAÑANAS DE JUEGOS</h2>
       <article class="activityFirst">
-        <h3 class="hour">Lunes, Miercoles y Viernes</h3>
+        <h3 class="hour">Lunes a Viernes</h3>
         <p >
-          8:30 a 9:30 hs
-        </p>
-      </article>
-      <article class="activitySecond">
-        <h3 class="hour">Martes y Jueves</h3>
-        <p >
-           20:00 a 21:00 hs
+          09:00 a 12.00 hs
         </p>
       </article>
     </section>
     <section class="days">
-      <h2>Esc de Gim deportiva, Hockey y Fútbol</h2>
+      <h2>CLASES DE TENIS</h2>
       <article class="activityFirst">
-        <h3 class="hour">Martes y Jueves</h3>
+        <h3 class="hour">(Adultos) Lunes</h3>
         <p >
-          17:30 a 19:00 hs
+          09:00 a 10:00hs
         </p>
       </article>
        <article class="activitySecond">
-        <h3 class="hour">Sabado</h3>
+        <h3 class="hour">(Niños) Martes y Jueves</h3>
         <p >
-          9:30 a 13:00 hs
+          17:00 a 20:00 hs
         </p>
       </article>
     </section>
     <section class="days">
-      <h2>Fútbol Femenino (Suspende por lluvia)</h2>
+      <h2>CLASES DE FUTBOL (Niños)</h2>
       <article class="activityFirst">
-        <h3 class="hour">Viernes</h3>
+        <h3 class="hour">Martes y Jueves</h3>
         <p >
-          9:30 a 11:00 hs
+           17:00 a 19:00hs
         </p>
       </article>
     </section>
     <section class="days">
-      <h2>Tenis infantil grupal</h2>
+      <h2>CLASES DE BASQUET (Niños)</h2>
       <article class="activityFirst">
-        <h3 class="hour">Sabado</h3>
+        <h3 class="hour">Martes</h3>
         <p >
-          10:00 a 11:00 hs
+          17:00 a 19:00hs
         </p>
       </article>
     </section>
