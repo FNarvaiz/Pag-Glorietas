@@ -229,7 +229,7 @@ function renderTennisBookingsStatus(resourceId)
         end if
       else
         if rs("RESERVABLE") then
-          if resourceId < 26  or not(( Weekday(d,1) < 6 and rs("INICIO") = 1320 ) or (Weekday(d,1) >5 and rs("INICIO") = 480 )) then 
+          
             if d <> rs("FECHA") then
               d = rs("FECHA")
               %><td width="190" class="bookingsButtons turnAvailable" align="center"><%
@@ -241,10 +241,7 @@ function renderTennisBookingsStatus(resourceId)
               <%
               emptyCell = false
             end if
-          else
-            d = rs("FECHA")
-            %><div title="Bloqueado" class="bookingsButtons turnNotAvailable" align="center">No disponible</div><%
-          end if 
+         
         elseif uCase(rs("ESTADO")) = "VACANTE" then
           if d <> rs("FECHA") then
             d = rs("FECHA")
