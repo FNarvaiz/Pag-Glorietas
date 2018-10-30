@@ -281,12 +281,12 @@ function renderAbout
       <article class="artAbout">
         <img src="contenidos/about/iconos/7.png"/>
         <title>Intendente</title>
-        <p>Ricardo Merlo</p>
+        <p>Claudio Feider Flores</p>
       </article>
       <article class="artAbout">
         <img src="contenidos/about/iconos/4.png"/>
         <title>Auxiliares</title>
-        <p>Oscar Perez / Carolina Talavera</p>
+        <p>Carlos Seltzer / Armando Gil / Gustavo Gonzalez</p>
       </article>
     </section>  
   
