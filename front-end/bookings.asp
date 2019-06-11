@@ -77,8 +77,8 @@ Viernes, Sábados y Visp. de Feriados de 19:00 hs a 03:00 hs, valor $ 3.300.-<br
 
  <strong>-QUINCHO</strong><br>
 
-Lunes a Jueves de 11:00 hs a 16:00 hs, valor $ 1.500.-<br>
-Lunes a Jueves de 17:00 hs a 20:00 hs, valor $ 1.500.-<br>
+Lunes a Viernes de 11:00 hs a 16:00 hs, valor $ 1.500.-<br>
+Lunes a Viernes de 17:00 hs a 20:00 hs, valor $ 1.500.-<br>
 Lunes a Jueves y Domingos de 21:00 hs a 24:00 hs, valor $ 1.500.-<br>
 Viernes de 21:00 A 03:00 hs., valor $ 2.000.-<br>
 Sábados y Domingos de 11:00 hs a 17:00 hs, valor $ 1.500.-<br>
